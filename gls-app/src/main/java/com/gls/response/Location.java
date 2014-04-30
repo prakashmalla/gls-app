@@ -5,6 +5,11 @@ public class Location {
 	private String longitude;
 	private String metroCode;
 	private String timeZone;
+	private String country;
+	private String subDivisionName;
+	private String subDivisionCode;
+	private String cityName;
+	private String postalCode;
 
 	public String getLatitude() {
 		return latitude;
@@ -36,6 +41,46 @@ public class Location {
 
 	public void setTimeZone(String timeZone) {
 		this.timeZone = timeZone;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+	public String getSubDivisionName() {
+		return subDivisionName;
+	}
+
+	public void setSubDivisionName(String subDivisionName) {
+		this.subDivisionName = subDivisionName;
+	}
+
+	public String getSubDivisionCode() {
+		return subDivisionCode;
+	}
+
+	public void setSubDivisionCode(String subDivisionCode) {
+		this.subDivisionCode = subDivisionCode;
+	}
+
+	public String getCityName() {
+		return cityName;
+	}
+
+	public void setCityName(String cityName) {
+		this.cityName = cityName;
+	}
+
+	public String getPostalCode() {
+		return postalCode;
+	}
+
+	public void setPostalCode(String postalCode) {
+		this.postalCode = postalCode;
 	}
 
 }

@@ -37,7 +37,13 @@ public class GlsController extends AbstractController {
 	public @ResponseBody
 	Location findGeoLocation(@PathVariable String ipAddress) throws UnknownHostException, IOException, GeoIp2Exception {
 		City model = databaseReader.city(InetAddress.getByName(ipAddress));
-		return dozerBeanMapper.map(model.getLocation(), Location.class);
+		Location location = dozerBeanMapper.map(model.getLocation(), Location.class);
+		location.setCountry(model.getCountry().getName());
+		location.setSubDivisionCode(model.getMostSpecificSubdivision().getName());
+		location.setSubDivisionCode(model.getMostSpecificSubdivision().getIsoCode());
+		location.setCityName(model.getCity().getName());
+		location.setPostalCode(model.getPostal().getCode());
+		return location;
 	}
 
 }
